@@ -536,18 +536,19 @@ function renderDoubanCards(data, container) {
             const proxiedCoverUrl = `https://dark-water-2beb.boboji19881979vvn.workers.dev/${originalCoverUrl}`;
             
             // 为不同设备优化卡片布局
-           card.innerHTML = `
+card.innerHTML = `
     <div class="relative w-full aspect-[2/3] overflow-hidden cursor-pointer" onclick="fillAndSearchWithDouban('${safeTitle}')">
         <img src="${proxiedCoverUrl}" alt="${safeTitle}" 
             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-            onerror="this.onerror=null; this.src='https://weserv.nl'; this.classList.add('object-contain');"
+            onerror="this.onerror=null; this.src='https://dark-water-2beb.boboji19881979vvn.workers.dev'; this.classList.add('object-contain');"
             loading="lazy" referrerpolicy="no-referrer">
         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
         <div class="absolute bottom-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded-sm">
             <span class="text-yellow-400">★</span> ${safeRate}
         </div>
         <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded-sm hover:bg-[#333] transition-colors">
-            <a href="${item.url}" target="_blank" rel="noopener noreferrer" title="在豆瓣查看" onclick="event.stopPropagation();">`
+            <a href="${item.url}" target="_blank" rel="noopener noreferrer" title="在豆瓣查看" onclick="event.stopPropagation();">
+                <svg class="w-4 h-4 text-gray-300 hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                             🔗
                         </a>
                     </div>
